@@ -17,6 +17,7 @@ interface ResumeLocation {
 interface ResumeBasics {
   name: string;
   label: string;
+  typingLabels?: string[];
   image?: string;
   email: string;
   phone?: string;
@@ -94,7 +95,11 @@ const transformedData: PortfolioData = {
   name: resumeData.basics.name,
   // For the typing animation, we'll use basics.label as a single item array.
   // If you want multiple phrases, you might consider adding a custom array field to your resume.json basics.
-  who_am_i: resumeData.basics.label ? [resumeData.basics.label] : [],
+
+  who_am_i: resumeData.basics.typingLabels && resumeData.basics.typingLabels.length > 0
+    ? resumeData.basics.typingLabels
+    : (resumeData.basics.label ? [resumeData.basics.label] : []),
+
   location: resumeData.basics.location
     ? `${resumeData.basics.location.city}${resumeData.basics.location.region ? `, ${resumeData.basics.location.region}` : ''}`
     : 'Location not specified',

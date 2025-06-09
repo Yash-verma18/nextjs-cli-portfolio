@@ -1,5 +1,5 @@
 import { data } from '../portfolioData'; // This path should still be correct
-
+import TypingAnimation from '../components/TypingAnimation';
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-black text-green-400 font-mono">
@@ -9,7 +9,11 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-5xl font-bold">
             {'>'} {data.name}
           </h1>
-          {/* We'll add the typing animation for data.who_am_i here soon */}
+          {data.who_am_i && data.who_am_i.length > 0 && (
+            <div className="text-xl md:text-2xl mt-2 text-cyan-400">
+              {'> '} <TypingAnimation sequences={data.who_am_i} />
+            </div>
+          )}
         </header>
 
         <section id="about" className="mb-8">

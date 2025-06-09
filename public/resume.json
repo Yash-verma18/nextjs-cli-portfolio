@@ -2,6 +2,12 @@
   "basics": {
     "name": "Yash Verma",
     "label": "Fullstack Web3 Engineer",
+    "typingLabels": [
+      "Fullstack Web3 Engineer",
+      "Blockchain Specialist",
+      "System Architect",
+      "Lifelong Learner"
+    ],
     "image": "",
     "email": "dev@yash-verma.me",
     "phone": "+91 9098971941",
