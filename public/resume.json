@@ -1,0 +1,616 @@
+{
+  "basics": {
+    "name": "Yash Verma",
+    "label": "Fullstack Web3 Engineer",
+    "image": "",
+    "email": "dev@yash-verma.me",
+    "phone": "+91 9098971941",
+    "url": "https://yash-verma.me/",
+    "summary": "I'm a full stack web3 developer who can build apps from the ground up. I've worked mostly at startups so I am used to wearing many hats. I also have an expertise in building scalable microservices, modern React frontends, and robust backends. Passionate about solving complex challenges in blockchain. Skilled in performance optimization, system design, and driving end-to-end project ownership.",
+    "location": {
+      "city": "Indore",
+      "region": "India",
+      "countryCode": "+91"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "raymax0x",
+        "url": "https://x.com/raymax0x"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "yashverma1881",
+        "url": "https://www.linkedin.com/in/yashverma1881/"
+      },
+      {
+        "network": "Github",
+        "username": "Yash-verma18",
+        "url": "https://github.com/Yash-verma18"
+      },
+
+      {
+        "network": "Youtube",
+        "username": "RaymaxOfficial",
+        "url": "https://www.youtube.com/@RaymaxOfficial"
+      },
+      {
+        "network": "Medium",
+        "username": "vermayash1881",
+        "url": "https://vermayash1881.medium.com/"
+      },
+      {
+        "network": "Porfolio",
+        "url": "https://www.yash-verma.me/"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Fullstack Development",
+      "keywords": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn",
+        "Material UI",
+        "Node.js",
+        "Go",
+        "Rust",
+        "Python"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": ["SQL", "NoSQL", "Postgres", "MongoDB", "Redis"]
+    },
+    {
+      "name": "Blockchain",
+      "keywords": [
+        "Solidity",
+        "Foudry",
+        "Smart Contracts",
+        "Ethereum",
+        "DeFi protocols",
+        "remix",
+        "Hardhat",
+        "Web3 libraries"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "keywords": [
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "Cloud Platforms (AWS, GCP)"
+      ]
+    },
+    {
+      "name": "Others",
+      "keywords": [
+        "Microservices",
+        "API Design (REST, GraphQL)",
+        "System Design",
+        "Performance Optimization"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Acropolis Technical Campus, Indore",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "startDate": "2017",
+      "endDate": "2021"
+    }
+  ],
+  "work": [
+    {
+      "name": "RTSN",
+      "position": "Fullstack Blockchain Engineer",
+      "url": "https://www.linkedin.com/company/rtsn/",
+      "startDate": "01-04-2022",
+      "endDate": "28-02-2025",
+      "summary": "Oversaw the entire development lifecycle of numerous features, from ideation to deployment, leading to substantial enhancements in platform functionality, Engineered and implemented NFT minting on blockchain networks via smart contracts, ensuring secure, transparent, and efficient asset transactions",
+      "highlights": [
+        "Architected and Developed Comprehensive Platform Features",
+        "Integrated blockchain, AI, LLMs, and gamification into platform functionality",
+        "Designed APIs and optimized backend for high performance and scalability",
+        "Worked cross-functionally to align technical solutions with business object"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "WorkLedger",
+      "description": "A decentralized application for tipping and reviewing completed work on-chain, ensuring transparency and immutability of feedback.",
+      "highlights": [
+        "Implemented tipping and testimonial functionality on-chain using Solidity smart contracts",
+        "Used Foundry for smart contract testing and deployment on Sepolia",
+        "Built a polished frontend using Next.js, TypeScript, Tailwind CSS, Shadcn UI, and Framer Motion",
+        "Enabled users to leave verified on-chain reviews with ETH tips and ratings",
+        "Deployed the frontend on Vercel and verified contracts with Forge"
+      ],
+      "keywords": [
+        "Solidity",
+        "Foundry",
+        "Next.js",
+        "Tailwind CSS",
+        "Shadcn",
+        "Framer Motion",
+        "TypeScript",
+        "Ethereum",
+        "Smart Contracts"
+      ],
+      "startDate": "2025-05-01",
+      "endDate": "2025-05-26",
+      "url": "https://workledger-frontend.vercel.app/",
+      "roles": ["Fullstack Developer", "Smart Contract Engineer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "On-Chain Comic Timeline",
+      "description": "A creative DApp that visualizes wallet activity like ETH transfers, NFT trades, and contract calls as comic-style cards, bringing a fun and engaging representation to blockchain transactions.",
+      "highlights": [
+        "Visualized wallet activity as animated comic panels using Framer Motion",
+        "Parsed and categorized transactions such as ETH transfers, NFT trades, and contract calls using Ethers.js and Wagmi",
+        "Used OpenSea API to enrich NFT data with images and metadata",
+        "Created reusable comic card components for each transaction type",
+        "Designed a vibrant frontend using Next.js, Tailwind CSS, and Shadcn UI"
+      ],
+      "keywords": [
+        "Next.js",
+        "Framer Motion",
+        "Wagmi",
+        "RainbowKit",
+        "Ethers.js",
+        "Tailwind CSS",
+        "Shadcn",
+        "Web3",
+        "Polygon",
+        "NFT",
+        "OpenSea API"
+      ],
+      "startDate": "2025-05-15",
+      "endDate": "2025-05-22",
+      "url": "https://fvm-frontend-starter-kit.vercel.app/",
+      "roles": ["Frontend Developer", "Web3 Engineer", "UI Designer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "#30DaysOfSolidity",
+      "description": "A self-driven challenge to master smart contract development by building 30 production-ready Solidity contracts in 30 days, ranging from DeFi to NFTs and DAOs.",
+      "highlights": [
+        "Built and deployed 30+ smart contracts using Solidity, Hardhat, and Foundry",
+        "Covered core topics like ERC-20, ERC-721, ERC-1155, AMMs, DAOs, staking, oracles, and yield farming",
+        "Created real-world projects including NFT marketplaces, escrow contracts, governance protocols, and liquidity pools",
+        "Shared daily learnings on Twitter and YouTube to help educate the Web3 community",
+        "Used GitHub for daily commits and versioning of smart contract logic"
+      ],
+      "keywords": [
+        "Solidity",
+        "Smart Contracts",
+        "Hardhat",
+        "Foundry",
+        "Ethereum",
+        "DeFi",
+        "NFT",
+        "Staking",
+        "DAOs",
+        "Oracles",
+        "Blockchain Development"
+      ],
+      "startDate": "2025-04-01",
+      "endDate": "2025-04-30",
+      "url": "https://github.com/Yash-verma18/30daysofsolidity",
+      "roles": ["Blockchain Developer", "Educator", "Content Creator"],
+      "entity": "Personal Challenge",
+      "type": "project"
+    },
+    {
+      "name": "Uniswap Liquidity Dashboard",
+      "description": "A real-time analytics dashboard to track and visualize liquidity pool data from Uniswap V3, helping users understand pool depths, volume, fees, and historical trends.",
+      "highlights": [
+        "Fetched Uniswap V3 pool data using The Graph and visualized it with interactive charts",
+        "Displayed key metrics like total liquidity, volume, and fee earnings across pools",
+        "Integrated a historical price chart with zoom and time filters using charting libraries",
+        "Implemented dynamic pool selection for ETH, USDC, DAI, and other token pairs",
+        "Designed a clean, responsive dashboard UI using Next.js and Tailwind CSS"
+      ],
+      "keywords": [
+        "Next.js",
+        "Tailwind CSS",
+        "The Graph",
+        "Uniswap V3",
+        "DeFi",
+        "Web3",
+        "React",
+        "Data Visualization"
+      ],
+      "startDate": "2025-03-10",
+      "endDate": "2025-03-17",
+      "url": "https://github.com/Yash-verma18/uniswap-liquidity-dashboard",
+      "roles": ["Frontend Developer", "Web3 Engineer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "StreamlineX",
+      "description": "An AI-powered productivity suite designed to automate workflows, summarize meetings, and manage tasks across teams using intelligent assistants and real-time collaboration.",
+      "highlights": [
+        "Engineered the backend architecture using Node.js and PostgreSQL for scalable task and meeting management",
+        "Integrated OpenAI APIs to auto-summarize meetings and generate action items from transcripts",
+        "Built a real-time chat and task sync system using Socket.io",
+        "Designed collaborative dashboards with seamless UX for managing to-do lists, calendars, and notes",
+        "Implemented role-based access control (RBAC) and JWT authentication"
+      ],
+      "keywords": [
+        "Node.js",
+        "PostgreSQL",
+        "OpenAI API",
+        "Socket.io",
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "AI",
+        "Productivity Tools"
+      ],
+      "startDate": "2024-11-01",
+      "endDate": "2024-12-10",
+      "url": "https://github.com/Yash-verma18/streamlinex",
+      "roles": ["Backend Engineer", "Fullstack Developer"],
+      "entity": "Hackathon Project",
+      "type": "project"
+    },
+    {
+      "name": "Token Exchange DApp",
+      "description": "A decentralized token trading platform enabling users to create, fill, and cancel token swap orders on-chain using a custom-built exchange smart contract.",
+      "highlights": [
+        "Developed and deployed custom ERC-20 and Exchange smart contracts using Hardhat",
+        "Implemented order book logic for token swaps including order creation, matching, and cancellation",
+        "Built a fullstack UI with Next.js and Tailwind CSS for seamless token trading",
+        "Integrated Ethers.js for blockchain interactions and Redux for order state management",
+        "Tested smart contracts with custom scenarios to prevent reentrancy and ensure swap accuracy"
+      ],
+      "keywords": [
+        "Solidity",
+        "Hardhat",
+        "ERC-20",
+        "Smart Contracts",
+        "Next.js",
+        "Ethers.js",
+        "Redux",
+        "Tailwind CSS",
+        "DeFi",
+        "Token Exchange"
+      ],
+      "startDate": "2025-03-01",
+      "endDate": "2025-05-31",
+      "url": "https://github.com/Yash-verma18/token-exchange-dapp",
+      "roles": ["Blockchain Developer", "Fullstack Engineer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "Crypto Soundbox",
+      "description": "A QR-based crypto payment system tailored for the Indian ecosystem, enabling users and merchants to send and receive crypto through simple sound or scan interactions.",
+      "highlights": [
+        "Built a Web3-enabled payment system using QR codes to initiate on-chain transactions",
+        "Designed user and merchant flows for seamless crypto transfers with instant feedback",
+        "Used Solidity to write and deploy contracts for payment handling and event tracking",
+        "Integrated Ethers.js with a React frontend to manage wallet connections and transfer flows",
+        "Showcased the project at ETHGlobal Hackathon to demonstrate real-world crypto usability"
+      ],
+      "keywords": [
+        "Solidity",
+        "Ethers.js",
+        "React",
+        "QR Code",
+        "Crypto Payments",
+        "Web3",
+        "ETHGlobal",
+        "Blockchain UX"
+      ],
+      "startDate": "2025-07-10",
+      "endDate": "2025-07-14",
+      "url": "https://github.com/Yash-verma18/crypto-soundbox",
+      "roles": ["Blockchain Engineer", "Hackathon Builder"],
+      "entity": "ETHGlobal Hackathon Project",
+      "type": "project"
+    },
+    {
+      "name": "Unity Works",
+      "description": "A decentralized platform that assigns unique tokens to artists and enables organizations to exchange their tokens as a public endorsement of trust and collaboration.",
+      "highlights": [
+        "Designed a token-based trust and endorsement system to quantify artistic credibility",
+        "Built smart contracts that allow organizations to send their tokens to artist wallets as proof of collaboration or recommendation",
+        "Focused on making artists' contributions persist beyond a project through on-chain recognition",
+        "Ensured transparent and immutable records of professional relationships and recommendations",
+        "Ideated and developed the concept as part of an initiative to empower independent creators"
+      ],
+      "keywords": [
+        "Solidity",
+        "Smart Contracts",
+        "Ethereum",
+        "Web3",
+        "Digital Identity",
+        "Tokenization",
+        "Trust Network",
+        "Blockchain for Creators"
+      ],
+      "startDate": "2025-08-01",
+      "endDate": "2025-08-15",
+      "url": "https://github.com/Yash-verma18/unity-works",
+      "roles": ["Blockchain Architect", "Concept Creator"],
+      "entity": "Personal Initiative",
+      "type": "project"
+    },
+    {
+      "name": "Hobbinator",
+      "description": "A fun and quirky platform that helps users discover, track, and share their hobbies while gamifying personal growth through progress badges and streaks.",
+      "highlights": [
+        "Built a fullstack application allowing users to log hobbies, set goals, and track progress over time",
+        "Implemented gamification features like badges, streak counters, and leaderboards to increase engagement",
+        "Integrated social sharing and public profiles to create a hobby-driven community",
+        "Used Next.js and Tailwind CSS for a responsive and vibrant frontend interface",
+        "Stored hobby data and user progress efficiently using MongoDB and Node.js"
+      ],
+      "keywords": [
+        "Next.js",
+        "Node.js",
+        "Tailwind CSS",
+        "MongoDB",
+        "Gamification",
+        "Personal Growth",
+        "Fullstack",
+        "Habit Tracker"
+      ],
+      "startDate": "2024-09-01",
+      "endDate": "2024-10-01",
+      "url": "https://github.com/Yash-verma18/hobbinator",
+      "roles": ["Fullstack Developer", "UI Designer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "BioDrop",
+      "description": "A Web3-powered digital identity platform that allows users to create and showcase a verifiable profile using blockchain credentials, project showcases, and social links.",
+      "highlights": [
+        "Created a decentralized profile system where users can drop their bio, links, and Web3 projects",
+        "Integrated ENS and wallet-based login to verify user identity on-chain",
+        "Enabled users to add project links, contributions, and social media to a personalized on-chain profile",
+        "Focused on creator-first design to highlight portfolios and collaboration history",
+        "Designed an intuitive interface using Next.js, TailwindCSS, and Shadcn UI"
+      ],
+      "keywords": [
+        "Next.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Web3 Identity",
+        "ENS",
+        "Blockchain",
+        "Digital Resume",
+        "Decentralized Profile"
+      ],
+      "startDate": "2024-08-10",
+      "endDate": "2024-08-25",
+      "url": "https://github.com/Yash-verma18/biodrop",
+      "roles": ["Frontend Developer", "Web3 Engineer"],
+      "entity": "Personal Project",
+      "type": "project"
+    },
+    {
+      "name": "Personal Portfolio Website",
+      "description": "A sleek and interactive personal website showcasing my Web3 projects, blogs, and contact links, built to reflect my design aesthetics and engineering expertise.",
+      "highlights": [
+        "Built a fully responsive portfolio using Next.js, Tailwind CSS, and Shadcn UI",
+        "Integrated GitHub, LinkedIn, blog, and project links for easy access",
+        "Highlighted featured projects with animations and smooth transitions using Framer Motion",
+        "Designed and deployed custom domain (https://yash-verma.me) for professional presence",
+        "Continuously updated with new content including blog posts, speaking events, and project launches"
+      ],
+      "keywords": [
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Shadcn UI",
+        "Portfolio",
+        "Personal Branding",
+        "Frontend",
+        "Developer Website"
+      ],
+      "startDate": "2023-12-01",
+      "endDate": "2024-01-10",
+      "url": "https://yash-verma.me",
+      "roles": ["Frontend Developer", "Designer", "Content Creator"],
+      "entity": "Personal Project",
+      "type": "project"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Filecoin: Zero to Hero Season 1- Star Performer",
+      "centificationUrl": "https://x.com/atypicalseeker/status/1843307874875007374",
+      "date": "2024",
+      "issuer": "Filecoin",
+      "url": "https://x.com/atypicalseeker/status/1843307874875007374"
+    },
+    {
+      "name": " Full Stack Development (Complete Web Development Course 2022)",
+      "centificationUrl": "https://www.udemy.com/certificate/UC-f990e526-f093-4982-b7d8-f31bcc3f656e/",
+      "github": "https://github.com/Yash-verma18/The-Complete-2022-Web-Development-Bootcamp-",
+      "year": "2022"
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "award": [],
+  "references": [
+    {
+      "name": "Aditya Gupta",
+      "reference": "I had the pleasure of working with Yash for ~ 3 years @ RTSN. Yash consistently demonstrated a strong enthusiasm for learning and a proactive approach to challenges, quickly mastering complex concepts and applying them effectively in his work. His expertise in both frontend and backend technologies, combined with a deeper practical understanding of blockchain and Smart Contracts, was invaluable. Yash’s reliability, commitment to excellence, and positive attitude fostered a collaborative team environment. Beyond his technical skills, he exhibited a solid understanding of system architecture and excelled at communicating complex ideas to diverse audiences. Yash is a truly valuable asset to any team, and I recommend him without reservation."
+    },
+    {
+      "name": "Jithin KS",
+      "reference": "I had the pleasure of working with Yash Verma at Time Space Ventures, now RTSN. We collaborated on RTSN, an innovative product for NFT creators to collaborate, which involved both frontend and backend development using React and Node.js. Yash's ability to quickly learn and implement new technologies was impressive. Despite being new to the project, he rapidly caught up and transitioned from a beginner to making significant contributions. His work on integrating ERC-721 contract showed his good understanding of blockchain technology. Yash's quick learning curve and adaptability will benefit any team he joins. I highly recommend Yesh as a blockchain fullstack developer."
+    },
+    {
+      "name": "Sachin Gurjar",
+      "reference": "Having worked closely with Yash in our team, it's not just his technical prowess that stands out, but also his dedication to the broader vision of the projects we've undertaken. His expertise as a and full stack web3 engineer is evident in every line of code he writes and every solution he proposes. Yash has a remarkable ability to not only understand the nuances of today's rapidly evolving web technologies but also to forecast and adapt to future trends. On a personal level, Yash's open-mindedness and genuine interest in feedback have fostered a culture of mutual respect and growth in our team. It was not just about completing tasks; for Yash, it was about building something meaningful, efficient, and enduring. I wholeheartedly recommend him."
+    },
+    {
+      "name": "Abdul Moid Khan Mohammed",
+      "reference": "I had the pleasure of working with Yash at RTSN/Time Space Ventures, where he played a pivotal role in my smooth and efficient onboarding. Yash is not only incredibly welcoming and supportive, but he also exhibits a genuine willingness to assist others at any time. His passion for web3 is evident in his dedication to learning and growth within the field. Yash's friendly demeanor and enthusiasm make him a valuable asset to any team, especially in environments that are as dynamic and rapidly evolving as web3 technologies."
+    }
+  ],
+  "blogs": [
+    {
+      "title": "How I Built WorkLedger: A DApp for On-Chain Work Reviews",
+      "url": "https://blog.blockmagnates.com/how-i-built-workledger-a-dapp-for-on-chain-work-reviews-bc0c6a4e50c1",
+      "keywords": [
+        "Web3",
+        "Solidity",
+        "DApp",
+        "On-Chain Reviews",
+        "Foundry",
+        "TailwindCSS"
+      ]
+    },
+    {
+      "title": "Day 11 : Surviving Your First Flash Sale: A Comprehensive Guide",
+      "url": "https://vermayash1881.medium.com/day-11-surviving-your-first-flash-sale-a-comprehensive-guide-5f7f5cc94882",
+      "keywords": [
+        "Flash Sales",
+        "E-Commerce",
+        "Product Design",
+        "Traffic Handling",
+        "System Design"
+      ]
+    },
+    {
+      "title": "Day 10 : System Design Secrets: How Big Tech Picks Winners",
+      "url": "https://vermayash1881.medium.com/day-10-system-design-secrets-how-big-tech-picks-winners-80deaf151568",
+      "keywords": [
+        "System Design",
+        "FAANG",
+        "Scalability",
+        "Architecture",
+        "Engineering Interviews"
+      ]
+    },
+    {
+      "title": "Day 9: The $2000 Redis Mistake — And How to Fix It Without Losing Your Mind! 🤯",
+      "url": "https://vermayash1881.medium.com/day-9-the-2000-redis-mistake-and-how-to-fix-it-without-losing-your-mind-8500c4fcc6d9",
+      "keywords": [
+        "Redis",
+        "Caching",
+        "Cost Optimization",
+        "Production Errors",
+        "Debugging"
+      ]
+    },
+    {
+      "title": "Day 8: Mastering the Art of Caching — Like a Pro!",
+      "url": "https://vermayash1881.medium.com/day-8-mastering-the-art-of-caching-like-a-pro-e71f0199a42e",
+      "keywords": [
+        "Caching",
+        "System Performance",
+        "Web Optimization",
+        "Backend",
+        "Scaling"
+      ]
+    },
+    {
+      "title": "Day 7️ : Speed Optimization & The Power of Caching!",
+      "url": "https://vermayash1881.medium.com/day-7️⃣-speed-optimization-the-power-of-caching-a36a0faa9431",
+      "keywords": [
+        "Speed Optimization",
+        "Performance",
+        "Caching",
+        "Web Development",
+        "System Design"
+      ]
+    },
+    {
+      "title": "Day 6: Scaling, Cost Optimization & Load Balancing!",
+      "url": "https://vermayash1881.medium.com/day-6-scaling-cost-optimization-load-balancing-a438dd7737e2",
+      "keywords": [
+        "Scaling",
+        "Load Balancing",
+        "Cost Optimization",
+        "Traffic Handling",
+        "Infrastructure"
+      ]
+    },
+    {
+      "title": "Day 5 ️: Microservices, Cost Estimation, and Engineering Trade-offs!",
+      "url": "https://vermayash1881.medium.com/day5%EF%B8%8F%E2%83%A3-microservices-cost-estimation-and-engineering-trade-offs-b04756ff9131",
+      "keywords": [
+        "Microservices",
+        "Cost Estimation",
+        "Trade-offs",
+        "System Design",
+        "Architecture"
+      ]
+    },
+    {
+      "title": "Day 4: Debugging, Monitoring, and Ensuring System Reliability!",
+      "url": "https://vermayash1881.medium.com/system-design-day-4-debugging-monitoring-and-ensuring-system-reliability-95e42a97e8a5",
+      "keywords": [
+        "Monitoring",
+        "Debugging",
+        "System Reliability",
+        "Observability",
+        "DevOps"
+      ]
+    },
+    {
+      "title": "Day 3: Bringing Your E-Commerce App to Life!",
+      "url": "https://vermayash1881.medium.com/system-design-day-3-bringing-your-e-commerce-app-to-life-b2be6e226839",
+      "keywords": [
+        "E-Commerce",
+        "Product Architecture",
+        "MVP",
+        "System Design",
+        "Backend"
+      ]
+    },
+    {
+      "title": "Day 2: Scaling Your E-Commerce App: From Prototype to Startup",
+      "url": "https://vermayash1881.medium.com/system-design-day-2-scaling-your-e-commerce-app-from-prototype-to-startup-4c6961cff9df",
+      "keywords": [
+        "Scaling",
+        "E-Commerce",
+        "System Architecture",
+        "Startup Tech",
+        "Cloud Infrastructure"
+      ]
+    },
+    {
+      "title": "Day 1: How Simple Solutions Solve Real Business Problems",
+      "url": "https://vermayash1881.medium.com/system-design-101-how-simple-solutions-solve-real-business-problems-33c8757a54af",
+      "keywords": [
+        "Problem Solving",
+        "System Design",
+        "Business Impact",
+        "Engineering Simplicity"
+      ]
+    },
+    {
+      "title": "RESTful API",
+      "url": "https://vermayash1881.medium.com/restful-api-a6bcdf0a21c6",
+      "keywords": [
+        "REST API",
+        "Backend",
+        "HTTP Methods",
+        "CRUD",
+        "Web Architecture"
+      ]
+    }
+  ],
+  "threads": [],
+  "youtube": []
+}
