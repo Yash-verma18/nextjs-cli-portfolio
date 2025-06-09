@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { data as portfolioData } from '@/portfolioData'; // Using alias from your previous change
-
+import ResumeDisplay from './ResumeDisplay';
 interface HistoryItem {
   id: number;
   type: 'input' | 'output' | 'system' | 'error';
@@ -55,6 +55,7 @@ const Terminal: React.FC = () => {
                 <li><span className="text-pink-400 w-28 inline-block">about</span>         - Display information about me.</li>
                 <li><span className="text-pink-400 w-28 inline-block">experience</span>    - Show my work experience.</li>
                 {/* <li><span className="text-pink-400 w-28 inline-block">skills</span>        - List my skills.</li> */}
+                <li><span className="text-pink-400 w-28 inline-block">show-profile</span>  - Display my profile information.</li>
                 {/* <li><span className="text-pink-400 w-28 inline-block">contact</span>       - Show contact information.</li> */}
                 <li><span className="text-pink-400 w-28 inline-block">sudo hire-me</span>  - Initiate contact for hiring.</li>
                 <li><span className="text-pink-400 w-28 inline-block">echo [text]</span>   - Print text back to the terminal.</li>
@@ -104,7 +105,22 @@ const Terminal: React.FC = () => {
             addHistoryItem({ type: 'output', content: "No professional experience listed yet." });
         }
         break;
-      case 'sudo':
+        case 'show-profile':
+        addHistoryItem({
+            type: 'output',
+            content: (
+            <ResumeDisplay
+                data={{
+                name: portfolioData.name,
+                who_am_i: portfolioData.who_am_i,
+                location: portfolioData.location,
+                summary: portfolioData.summary,
+                }}
+            />
+            ),
+            });
+            break;
+        case 'sudo':
         if (args[0]?.toLowerCase() === 'hire-me') {
           addHistoryItem({ type: 'output', content: `Initiating contact protocol for ${portfolioData.name}...` });
           addHistoryItem({ type: 'output', content: `Please reach out to: ${portfolioData.email}` });
