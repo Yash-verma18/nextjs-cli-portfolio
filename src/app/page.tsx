@@ -1,5 +1,6 @@
 import { data } from '../portfolioData'; // This path should still be correct
-import TypingAnimation from '../components/TypingAnimation';
+import TypingAnimation from '@/components/TypingAnimation';
+import ExperienceSection from '@/components/ExperienceSection';
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-black text-green-400 font-mono">
@@ -20,6 +21,8 @@ export default function HomePage() {
           <h2 className="text-2xl mb-2 text-yellow-400">~/about-me:</h2>
           <p>{data.summary}</p>
         </section>
+
+        <ExperienceSection experience={data.experience} />
 
         {/* We will add more sections (experience, skills, contact) here */}
       </div>
