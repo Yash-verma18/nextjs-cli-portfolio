@@ -4,17 +4,24 @@
     "label": "Fullstack Web3 Engineer",
     "typingLabels": [
       "Fullstack Web3 Engineer",
-      "Blockchain Specialist",
-      "System Architect",
-      "Lifelong Learner"
+      "Backend Engineer",
+      "Frontend Engineer",
+      "Blockchain Engineer",
+      "System Architect"
     ],
     "image": "",
     "email": "dev@yash-verma.me",
     "phone": "+91 9098971941",
     "url": "https://yash-verma.me/",
-    "summary": "I'm a full stack web3 developer who can build apps from the ground up. I've worked mostly at startups so I am used to wearing many hats. I also have an expertise in building scalable microservices, modern React frontends, and robust backends. Passionate about solving complex challenges in blockchain. Skilled in performance optimization, system design, and driving end-to-end project ownership.",
+   "summary": [
+      "Full-stack Web3 engineer with end-to-end product expertise",
+      "Experienced in startup environments and rapid prototyping",
+      "Skilled in scalable microservices, React, and backend systems",
+      "Focused on performance, reliability, and clean architecture",
+      "Driven by solving real-world problems through blockchain"
+    ],
     "location": {
-      "city": "Indore",
+      "city": "Bangalore",
       "region": "India",
       "countryCode": "+91"
     },

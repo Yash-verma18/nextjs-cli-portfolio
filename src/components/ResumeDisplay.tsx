@@ -7,7 +7,7 @@ interface ResumeDisplayProps {
     name: string;
     who_am_i: string[];
     location: string;
-    summary: string;
+    summary: string[];
   };
 }
 
@@ -29,10 +29,7 @@ const JsonStringValue: React.FC<{ children: React.ReactNode; isLast?: boolean }>
 );
 
 const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
-  const aboutMeLines = data.summary.includes('\n')
-    ? data.summary.split('\n').map(line => line.trim()).filter(line => line)
-    : [data.summary];
-
+  
   return (
     <div className="font-mono text-sm leading-relaxed">
       <SyntaxChar>{'{'}</SyntaxChar>
@@ -54,16 +51,16 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
         <div>
           <JsonKey>location</JsonKey>
           <SyntaxChar>: </SyntaxChar>
-          <JsonStringValue isLast={aboutMeLines.length === 0}>{data.location}</JsonStringValue>
+          <JsonStringValue isLast={false}>{data.location}</JsonStringValue>
         </div>
-        {aboutMeLines.length > 0 && (
+        {data.summary.length > 0 && (
           <div>
             <JsonKey>about_me</JsonKey>
             <SyntaxChar>: [</SyntaxChar>
             <div className="pl-4">
-              {aboutMeLines.map((line, index) => (
+            { data.summary.map((line, index) => (
                 <div key={index}>
-                  <JsonStringValue isLast={index === aboutMeLines.length - 1}>{line}</JsonStringValue>
+                  <JsonStringValue isLast={index === data.summary.length - 1}>{line}</JsonStringValue>
                 </div>
               ))}
             </div>

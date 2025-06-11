@@ -30,6 +30,15 @@ body {
   text-shadow: 0 0 0 #FF9800, 0 0 6px #FF9800, 0 0 10px #FF9800; /* Enhanced glow */
 }
 
+.text-glow-amber {
+  color: #5272F2; /* Or use theme('colors.glow-amber') if you prefer Tailwind's color system */
+  text-shadow: 0 0 0 #5272F2, 0 0 6px #5272F2, 0 0 10px #5272F2; /* Enhanced glow */
+}
+
+.text-glow-pink {
+  color: #E90074; /* Or use theme('colors.glow-amber') if you prefer Tailwind's color system */
+  text-shadow: 0 0 0 #E90074, 0 0 6px #E90074, 0 0 10px #E90074; /* Enhanced glow */
+}
 
 /* Animation for CRT startup effect */
 @keyframes turn-on {

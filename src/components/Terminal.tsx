@@ -16,8 +16,8 @@ const Terminal: React.FC = () => {
   const endOfHistoryRef = useRef<HTMLDivElement>(null);
 
   const userName = portfolioData.name.toLowerCase().split(' ')[0] || 'user';
-  const hostName = 'portfolio.dev';
-  const PROMPT = `[${userName}@${hostName} ~]$ `;
+  const hostName = 'yash-verma.me';
+  const PROMPT = `[dev@${hostName} ~]$ `;
 
   const addHistoryItem = useCallback((item: Omit<HistoryItem, 'id'>) => {
     setHistory(prev => [...prev, { ...item, id: Date.now() + prev.length }]);
@@ -71,17 +71,17 @@ const Terminal: React.FC = () => {
             <div>
               <p>Available commands:</p>
               <ul className="list-none pl-2">
-                <li><span className="text-pink-400 w-28 inline-block">about</span>         - Display information about me.</li>
-                <li><span className="text-pink-400 w-28 inline-block">experience</span>    - Show my work experience.</li>
-                {/* <li><span className="text-pink-400 w-28 inline-block">skills</span>        - List my skills.</li> */}
-                <li><span className="text-pink-400 w-28 inline-block">show-profile</span>  - Display my profile information.</li>
-                {/* <li><span className="text-pink-400 w-28 inline-block">contact</span>       - Show contact information.</li> */}
-                <li><span className="text-pink-400 w-28 inline-block">sudo hire-me</span>  - Initiate contact for hiring.</li>
-                <li><span className="text-pink-400 w-28 inline-block">echo [text]</span>   - Print text back to the terminal.</li>
-                <li><span className="text-pink-400 w-28 inline-block">date</span>          - Display the current date and time.</li>
-                <li><span className="text-pink-400 w-28 inline-block">whoami</span>        - Display current user.</li>
-                <li><span className="text-pink-400 w-28 inline-block">clear</span>         - Clear the terminal screen.</li>
-                <li><span className="text-pink-400 w-28 inline-block">banner</span>        - Display the welcome banner.</li>
+                <li><span className="text-glow-pink w-28 inline-block">about</span>         - Display information about me.</li>
+                <li><span className="text-glow-pink w-28 inline-block">experience</span>    - Show my work experience.</li>
+                {/* <li><span className="text-glow-pink w-28 inline-block">skills</span>        - List my skills.</li> */}
+                <li><span className="text-glow-pink w-28 inline-block">show-profile</span>  - Display my profile information.</li>
+                {/* <li><span className="text-glow-pink w-28 inline-block">contact</span>       - Show contact information.</li> */}
+                <li><span className="text-glow-pink w-28 inline-block">sudo hire-me</span>  - Initiate contact for hiring.</li>
+                <li><span className="text-glow-pink w-28 inline-block">echo [text]</span>   - Print text back to the terminal.</li>
+                <li><span className="text-glow-pink w-28 inline-block">date</span>          - Display the current date and time.</li>
+                <li><span className="text-glow-pink w-28 inline-block">whoami</span>        - Display current user.</li>
+                <li><span className="text-glow-pink w-28 inline-block">clear</span>         - Clear the terminal screen.</li>
+                <li><span className="text-glow-pink w-28 inline-block">banner</span>        - Display the welcome banner.</li>
               </ul>
             </div>
           ),
@@ -104,7 +104,16 @@ const Terminal: React.FC = () => {
         addHistoryItem({ type: 'system', content: portfolioData.who_am_i.join(' | ') });
         break;
       case 'about':
-        addHistoryItem({ type: 'output', content: portfolioData.summary });
+        addHistoryItem({
+          type: 'output',
+          content: (
+            <div>
+              {portfolioData.summary.map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </div>
+          ),
+        });
         break;
       case 'experience':
         // This will be improved later to use the ExperienceSection component's logic
@@ -113,7 +122,7 @@ const Terminal: React.FC = () => {
             type: 'output',
             content: (
               <div>
-                <p className="text-blue-400">{job.key} <span className="text-green-400">@</span> <span className="text-pink-400">{job.value}</span></p>
+                <p className="text-blue-400">{job.key} <span className="text-green-400">@</span> <span className="text-glow-pink">{job.value}</span></p>
                 <p className="text-sm text-gray-400">{job.startDate} - {job.endDate || 'Present'}</p>
                 {job.summary && <p className="text-gray-300">{job.summary}</p>}
               </div>
@@ -176,7 +185,7 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on text-glow"
+      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on text-glow lowercase"
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
     
@@ -184,7 +193,7 @@ const Terminal: React.FC = () => {
         <div key={item.id} className="mb-3 mt-3 leading-normal">
           {item.type === 'input' && (
             <div>
-              <span >{PROMPT}</span>
+              <span className="text-glow-amber">{PROMPT}</span>
               <span >{item.content}</span>
             </div>
           )}
@@ -195,7 +204,7 @@ const Terminal: React.FC = () => {
       ))}
       <form onSubmit={handleSubmit} className="flex items-center w-fit">
         <div className="flex items-center w-fit">
-          <span className="mr-1 shrink-0">{PROMPT}</span>
+          <span className="mr-1 shrink-0 text-glow-amber">{PROMPT}</span>
           <span className="text-input-mock" onClick={() => inputRef.current?.focus()}>
             {input}
             <span className="blinking-cursor">|</span>

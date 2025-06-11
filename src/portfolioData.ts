@@ -22,7 +22,7 @@ interface ResumeBasics {
   email: string;
   phone?: string;
   url?: string;
-  summary: string;
+  summary: string[];
   location?: ResumeLocation;
   profiles: ResumeProfile[];
 }
@@ -81,7 +81,7 @@ export interface PortfolioData {
   location: string;
   email: string;
   website?: string;
-  summary: string;
+  summary: string[];
   experience: ExperienceItem[];
   skills: ResumeSkillItem[]; // We'll use the skills structure directly for now
   social: SocialLink[];
