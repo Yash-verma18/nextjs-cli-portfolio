@@ -9,6 +9,8 @@ interface HistoryItem {
   content: React.ReactNode;
 }
 
+console.log("portfolioData",portfolioData)
+
 const Terminal: React.FC = () => {
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [input, setInput] = useState('');
@@ -37,6 +39,8 @@ const Terminal: React.FC = () => {
             who_am_i: portfolioData.who_am_i,
             location: portfolioData.location,
             summary: portfolioData.summary,
+            experience: portfolioData.experience,
+            social: portfolioData.social,
           }}
         />
       ),
@@ -54,10 +58,7 @@ const Terminal: React.FC = () => {
     inputRef.current?.focus();
   }, [history]);
 
-  useEffect(() => {
-    console.log("inputRef",inputRef)
-    console.log("endOfHistoryRef",endOfHistoryRef)
-  }, [endOfHistoryRef]);
+
 
   const processCommand = useCallback((commandStr: string): void => {
     const [command, ...args] = commandStr.trim().split(' ');
@@ -143,7 +144,10 @@ const Terminal: React.FC = () => {
                 who_am_i: portfolioData.who_am_i,
                 location: portfolioData.location,
                 summary: portfolioData.summary,
+                experience: portfolioData.experience,
+                social: portfolioData.social,
                 }}
+               
             />
             ),
             });

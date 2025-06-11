@@ -1,6 +1,7 @@
 // src/components/ResumeDisplay.tsx
 import React from 'react';
 import TypingAnimation from './TypingAnimation';
+import type { ExperienceItem, SocialLink } from '@/portfolioData';
 
 interface ResumeDisplayProps {
   data: {
@@ -8,6 +9,8 @@ interface ResumeDisplayProps {
     who_am_i: string[];
     location: string;
     summary: string[];
+    experience: ExperienceItem[];
+    social: SocialLink[];
   };
 }
 
@@ -65,8 +68,76 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
               ))}
             </div>
             <SyntaxChar>]</SyntaxChar>
+            <SyntaxChar>,</SyntaxChar>
           </div>
+          
         )}
+        
+        <div>
+          <JsonKey>experience</JsonKey>
+          <SyntaxChar>: [</SyntaxChar>
+          <div className="pl-4">
+            {data.experience.map((exp, expIndex) => (
+              <div key={expIndex}>
+                <SyntaxChar>{'{'}</SyntaxChar>
+                <div className="pl-4">
+                  <div>
+                    <JsonKey>company</JsonKey><SyntaxChar>: </SyntaxChar>
+                    <JsonStringValue isLast={false}>{exp.value}</JsonStringValue>
+                  </div>
+                  <div>
+                    <JsonKey>role</JsonKey><SyntaxChar>: </SyntaxChar>
+                    <JsonStringValue isLast={false}>{exp.key}</JsonStringValue>
+                  </div>
+                  {exp.startDate && (
+                    <div>
+                      <JsonKey>period</JsonKey><SyntaxChar>: </SyntaxChar>
+                      <JsonStringValue isLast={false}>{`${exp.startDate}${exp.endDate ? ' - ' + exp.endDate : ''}`}</JsonStringValue>
+                    </div>
+                  )}
+                
+                  {exp.highlights && exp.highlights.length > 0 && (
+                    <div>
+                      <JsonKey>highlights</JsonKey><SyntaxChar>: [</SyntaxChar>
+                      <div className="pl-4">
+                        {exp.highlights.map((highlight, hlIndex) => (
+                          <div key={hlIndex}>
+                            <JsonStringValue isLast={hlIndex === exp.highlights!.length - 1}>{highlight}</JsonStringValue>
+                          </div>
+                        ))}
+                      </div>
+                      <SyntaxChar>]</SyntaxChar>
+                    </div>
+                  )}
+                </div>
+                <SyntaxChar>{'}'}</SyntaxChar>
+                {expIndex < data.experience.length - 1 && <SyntaxChar>,</SyntaxChar>}
+              </div>
+            ))}
+          </div>
+          <SyntaxChar>]</SyntaxChar>
+          <SyntaxChar>,</SyntaxChar>
+        </div>
+        
+        {/* add socials */}
+        <div>
+          <JsonKey>socials</JsonKey><SyntaxChar>: [</SyntaxChar>
+          <div className="pl-4">
+            {data.social.map((social, index) => (
+              <div key={index}>
+                <JsonStringValue isLast={index === data.social.length - 1}>{social.value}</JsonStringValue>
+                <SyntaxChar>,</SyntaxChar>
+                <JsonStringValue isLast={index === data.social.length - 1}>{social.url}</JsonStringValue>
+                <SyntaxChar>,</SyntaxChar>
+                <JsonStringValue isLast={index === data.social.length - 1}>{social.username}</JsonStringValue>
+                {index < data.social.length - 1 && <SyntaxChar>,</SyntaxChar>}
+              </div>
+            ))}
+          </div>
+          <SyntaxChar>]</SyntaxChar>
+          <SyntaxChar>,</SyntaxChar>
+        </div>
+        
       </div>
       <SyntaxChar>{'}'}</SyntaxChar>
     </div>

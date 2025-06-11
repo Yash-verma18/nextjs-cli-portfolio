@@ -20,7 +20,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ sequences, className 
     <TypeAnimation
       sequence={typeAnimationSequence}
       wrapper="span"
-      speed={50}
+      speed={10}
       className={className}
       repeat={Infinity}
       cursor={true}
