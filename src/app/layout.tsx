@@ -12,8 +12,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'My CLI Resume',
-  description: 'Interactive portfolio',
+  title: 'Yash Verma - Portfolio',
+  description: 'CLI Portfolio',
 };
 
 export default function RootLayout({

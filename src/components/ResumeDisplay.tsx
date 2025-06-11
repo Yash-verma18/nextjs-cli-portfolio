@@ -121,24 +121,21 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
         <div>
           <JsonKey>socials</JsonKey><SyntaxChar>: [</SyntaxChar>
           <div className="pl-4">
-            {data.social.map((social, index) => {
-              const isLast = index === data.social.length - 1;
-              return (
-                <React.Fragment key={index}>
-                  <SyntaxChar>"</SyntaxChar>
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-400 social-link"
-                  >
-                    {social.value}
-                  </a>
-                  <SyntaxChar>"</SyntaxChar>
-                  {!isLast && <SyntaxChar>, </SyntaxChar>}
-                </React.Fragment>
-              );
-            })}
+            {data.social.map((social, index) => (
+              <div key={social.url}>
+                <JsonStringValue>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" social-link"
+                >
+                  {social.value}
+                </a>
+                </JsonStringValue>
+                {index < data.social.length - 1 && <SyntaxChar>,</SyntaxChar>}
+              </div>
+            ))}
           </div>
           <SyntaxChar>]</SyntaxChar>
           {/* Removed trailing comma as this is the last element */}
