@@ -25,8 +25,7 @@ const Terminal: React.FC = () => {
 
   // Initial welcome messages and ResumeDisplay
   useEffect(() => {
-    addHistoryItem({ type: 'system', content: `Welcome to ${portfolioData.name}'s Interactive Portfolio!` });
-    addHistoryItem({ type: 'system', content: `Type 'help' for a list of available commands.` });
+   
     
     // Add the ResumeDisplay component to the initial output
     addHistoryItem({
@@ -42,6 +41,11 @@ const Terminal: React.FC = () => {
         />
       ),
     });
+
+
+     addHistoryItem({ type: 'system', content: `Welcome to ${portfolioData.name}'s Interactive Portfolio!` });
+    addHistoryItem({ type: 'system', content: `Type 'help' for a list of available commands.` });
+
   }, [addHistoryItem, portfolioData.name, portfolioData.who_am_i, portfolioData.location, portfolioData.summary]); // Added dependencies
 
   // Scroll to bottom and focus input on history change
@@ -164,9 +168,7 @@ const Terminal: React.FC = () => {
     addHistoryItem({ type: 'input', content: commandToProcess });
 
     if (commandToProcess.toLowerCase() === 'clear') {
-      setHistory([]); // Clear history before processing so it doesn't show the "clear" input
-      // Optionally add a small message or just leave it blank
-      // addHistoryItem({ type: 'system', content: "Terminal cleared." });
+      setHistory([]); 
       return;
     }
     processCommand(commandToProcess);
@@ -174,11 +176,11 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="w-full h-fullpy-3 pl-6 pr-3 md:py-4 md:pl-8 md:pr-4 overflow-y-auto"
+      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on"
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
        <div className="mb-0.5 leading-normal">
-          <span className="text-cyan-400">{PROMPT}</span>
+          <span className="text-glow">{PROMPT}</span>
           <span className="blinking-cursor"></span>
         </div>
       {history.map((item) => (
@@ -195,14 +197,14 @@ const Terminal: React.FC = () => {
         </div>
       ))}
       <form onSubmit={handleSubmit} className="flex">
-        <label htmlFor="commandInput" className="text-cyan-400 mr-1 shrink-0">{PROMPT}</label>
+        <label htmlFor="commandInput" className="text-glow mr-1 shrink-0">{PROMPT}</label>
         <input
           id="commandInput"
           ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-grow bg-transparent border-none outline-none text-green-400"
+          className="flex-grow bg-transparent border-none outline-none text-glow"
           autoFocus
           autoComplete="off"
           spellCheck="false"
