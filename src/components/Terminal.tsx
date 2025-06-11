@@ -43,7 +43,7 @@ const Terminal: React.FC = () => {
     });
 
 
-     addHistoryItem({ type: 'system', content: `Welcome to ${portfolioData.name}'s Interactive Portfolio!` });
+    addHistoryItem({ type: 'system', content: `Welcome to ${portfolioData.name}'s Interactive Portfolio!` });
     addHistoryItem({ type: 'system', content: `Type 'help' for a list of available commands.` });
 
   }, [addHistoryItem, portfolioData.name, portfolioData.who_am_i, portfolioData.location, portfolioData.summary]); // Added dependencies
@@ -176,39 +176,39 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on"
+      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on text-glow"
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
-       <div className="mb-0.5 leading-normal">
-          <span className="text-glow">{PROMPT}</span>
-          <span className="blinking-cursor"></span>
-        </div>
+    
       {history.map((item) => (
-        <div key={item.id} className="mb-0.5 leading-normal">
+        <div key={item.id} className="mb-3 mt-3 leading-normal">
           {item.type === 'input' && (
             <div>
-              <span className="text-cyan-400">{PROMPT}</span>
-              <span className="text-green-400">{item.content}</span>
+              <span >{PROMPT}</span>
+              <span >{item.content}</span>
             </div>
           )}
-          {item.type === 'output' && <div className="text-gray-200 whitespace-pre-wrap">{item.content}</div>}
-          {item.type === 'system' && <div className="text-yellow-400">{item.content}</div>}
-          {item.type === 'error' && <div className="text-red-500">{item.content}</div>}
+          {item.type === 'output' && <div className=" whitespace-pre-wrap">{item.content}</div>}
+          {item.type === 'system' && <div>{item.content}</div>}
+          {item.type === 'error' && <div>{item.content}</div>}
         </div>
       ))}
-      <form onSubmit={handleSubmit} className="flex">
-        <label htmlFor="commandInput" className="text-glow mr-1 shrink-0">{PROMPT}</label>
-        <input
-          id="commandInput"
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="flex-grow bg-transparent border-none outline-none text-glow"
-          autoFocus
-          autoComplete="off"
-          spellCheck="false"
-        />
+      <form onSubmit={handleSubmit} className="flex items-center w-fit">
+        <div className="flex items-center w-fit">
+          <span className="mr-1 shrink-0">{PROMPT}</span>
+          <span className="text-input-mock" onClick={() => inputRef.current?.focus()}>
+            {input}
+            <span className="blinking-cursor">|</span>
+          </span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="absolute left-[-9999px]" // hide input off-screen
+            autoFocus
+          />
+      </div>
       </form>
       <div ref={endOfHistoryRef} />
     </div>

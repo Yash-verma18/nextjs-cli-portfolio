@@ -30,11 +30,6 @@ body {
   text-shadow: 0 0 0 #FF9800, 0 0 6px #FF9800, 0 0 10px #FF9800; /* Enhanced glow */
 }
 
-/* Optional: Style for syntax characters if you want them slightly different */
-.syntax-char-glow {
-  color: #FF9800; /* A darker amber for less emphasis */
-  text-shadow: 0 0 2px #FF9800;
-}
 
 /* Animation for CRT startup effect */
 @keyframes turn-on {
@@ -66,3 +61,17 @@ body {
   background-color: currentColor; /* Use the current text color */
   margin-left: 2px; /* Small space after prompt */
 }
+
+.hide-native-cursor {
+  caret-color: transparent;
+}
+
+.text-input-mock {
+  white-space: pre;
+}
+
+/* .blinking-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(2, start) infinite;
+} */
