@@ -174,9 +174,13 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-    className={`w-full h-full p-3 md:p-4 overflow-y-auto crt-turn-on`}
+      className="w-full h-fullpy-3 pl-6 pr-3 md:py-4 md:pl-8 md:pr-4 overflow-y-auto"
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
+       <div className="mb-0.5 leading-normal">
+          <span className="text-cyan-400">{PROMPT}</span>
+          <span className="blinking-cursor"></span>
+        </div>
       {history.map((item) => (
         <div key={item.id} className="mb-0.5 leading-normal">
           {item.type === 'input' && (

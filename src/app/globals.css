@@ -52,3 +52,17 @@ body {
   animation: turn-on 2s ease-in-out forwards;
   transform-origin: top;
 }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+  display: inline-block;
+  width: 0.5em; /* Adjust width as needed */
+  height: 1.2em; /* Adjust height as needed */
+  background-color: currentColor; /* Use the current text color */
+  margin-left: 2px; /* Small space after prompt */
+}
