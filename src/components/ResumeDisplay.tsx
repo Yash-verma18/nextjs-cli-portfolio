@@ -32,7 +32,6 @@ const JsonStringValue: React.FC<{ children: React.ReactNode; isLast?: boolean }>
 );
 
 const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
-  
   return (
     <div className="font-mono text-sm leading-relaxed">
       <SyntaxChar>{'{'}</SyntaxChar>
@@ -119,23 +118,30 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
           <SyntaxChar>,</SyntaxChar>
         </div>
         
-        {/* add socials */}
         <div>
           <JsonKey>socials</JsonKey><SyntaxChar>: [</SyntaxChar>
           <div className="pl-4">
-            {data.social.map((social, index) => (
-              <div key={index}>
-                <JsonStringValue isLast={index === data.social.length - 1}>{social.value}</JsonStringValue>
-                <SyntaxChar>,</SyntaxChar>
-                <JsonStringValue isLast={index === data.social.length - 1}>{social.url}</JsonStringValue>
-                <SyntaxChar>,</SyntaxChar>
-                <JsonStringValue isLast={index === data.social.length - 1}>{social.username}</JsonStringValue>
-                {index < data.social.length - 1 && <SyntaxChar>,</SyntaxChar>}
-              </div>
-            ))}
+            {data.social.map((social, index) => {
+              const isLast = index === data.social.length - 1;
+              return (
+                <React.Fragment key={index}>
+                  <SyntaxChar>"</SyntaxChar>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 social-link"
+                  >
+                    {social.value}
+                  </a>
+                  <SyntaxChar>"</SyntaxChar>
+                  {!isLast && <SyntaxChar>, </SyntaxChar>}
+                </React.Fragment>
+              );
+            })}
           </div>
           <SyntaxChar>]</SyntaxChar>
-          <SyntaxChar>,</SyntaxChar>
+          {/* Removed trailing comma as this is the last element */}
         </div>
         
       </div>
