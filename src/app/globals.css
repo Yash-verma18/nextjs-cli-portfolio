@@ -35,3 +35,20 @@ body {
   color: #FF9800; /* A darker amber for less emphasis */
   text-shadow: 0 0 2px #FF9800;
 }
+
+/* Animation for CRT startup effect */
+@keyframes turn-on {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.crt-turn-on {
+  animation: turn-on 2s ease-in-out forwards;
+  transform-origin: top;
+}

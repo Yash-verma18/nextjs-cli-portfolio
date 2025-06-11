@@ -23,11 +23,26 @@ const Terminal: React.FC = () => {
     setHistory(prev => [...prev, { ...item, id: Date.now() + prev.length }]);
   }, []);
 
-  // Initial welcome messages
+  // Initial welcome messages and ResumeDisplay
   useEffect(() => {
     addHistoryItem({ type: 'system', content: `Welcome to ${portfolioData.name}'s Interactive Portfolio!` });
     addHistoryItem({ type: 'system', content: `Type 'help' for a list of available commands.` });
-  }, [addHistoryItem, portfolioData.name]);
+    
+    // Add the ResumeDisplay component to the initial output
+    addHistoryItem({
+      type: 'output', // Displayed as output, similar to a command result
+      content: (
+        <ResumeDisplay
+          data={{
+            name: portfolioData.name,
+            who_am_i: portfolioData.who_am_i,
+            location: portfolioData.location,
+            summary: portfolioData.summary,
+          }}
+        />
+      ),
+    });
+  }, [addHistoryItem, portfolioData.name, portfolioData.who_am_i, portfolioData.location, portfolioData.summary]); // Added dependencies
 
   // Scroll to bottom and focus input on history change
   useEffect(() => {
@@ -159,7 +174,7 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="w-full h-full p-3 md:p-4 overflow-y-auto"
+    className={`w-full h-full p-3 md:p-4 overflow-y-auto crt-turn-on`}
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
       {history.map((item) => (
