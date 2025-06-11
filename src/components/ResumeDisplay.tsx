@@ -123,7 +123,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
           <div className="pl-4">
             {data.social.map((social, index) => (
               <div key={social.url}>
-                <JsonStringValue>
+                <JsonStringValue isLast={index === data.social.length - 1}>
                 <a
                   href={social.url}
                   target="_blank"
@@ -133,7 +133,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
                   {social.value}
                 </a>
                 </JsonStringValue>
-                {index < data.social.length - 1 && <SyntaxChar>,</SyntaxChar>}
+              
               </div>
             ))}
           </div>
