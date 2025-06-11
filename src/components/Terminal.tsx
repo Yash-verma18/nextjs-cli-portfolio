@@ -72,17 +72,17 @@ const Terminal: React.FC = () => {
             <div>
               <p>Available commands:</p>
               <ul className="list-none pl-2">
-                <li><span className="text-glow-pink w-28 inline-block">about</span>         - Display information about me.</li>
-                <li><span className="text-glow-pink w-28 inline-block">experience</span>    - Show my work experience.</li>
-                {/* <li><span className="text-glow-pink w-28 inline-block">skills</span>        - List my skills.</li> */}
-                <li><span className="text-glow-pink w-28 inline-block">show-profile</span>  - Display my profile information.</li>
-                {/* <li><span className="text-glow-pink w-28 inline-block">contact</span>       - Show contact information.</li> */}
-                <li><span className="text-glow-pink w-28 inline-block">sudo hire-me</span>  - Initiate contact for hiring.</li>
-                <li><span className="text-glow-pink w-28 inline-block">echo [text]</span>   - Print text back to the terminal.</li>
-                <li><span className="text-glow-pink w-28 inline-block">date</span>          - Display the current date and time.</li>
-                <li><span className="text-glow-pink w-28 inline-block">whoami</span>        - Display current user.</li>
-                <li><span className="text-glow-pink w-28 inline-block">clear</span>         - Clear the terminal screen.</li>
-                <li><span className="text-glow-pink w-28 inline-block">banner</span>        - Display the welcome banner.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">about</span>         - Display information about me.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">experience</span>    - Show my work experience.</li>
+                {/* <li><span className="text-glow-pink w-24 sm:w-28 inline-block">skills</span>        - List my skills.</li> */}
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">show-profile</span>  - Display my profile information.</li>
+                {/* <li><span className="text-glow-pink w-24 sm:w-28 inline-block">contact</span>       - Show contact information.</li> */}
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">sudo hire-me</span>  - Initiate contact for hiring.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">echo [text]</span>   - Print text back to the terminal.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">date</span>          - Display the current date and time.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">whoami</span>        - Display current user.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">clear</span>         - Clear the terminal screen.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">banner</span>        - Display the welcome banner.</li>
               </ul>
             </div>
           ),
@@ -189,7 +189,10 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="w-full h-full md:py-10 md:pl-28 md:pr-28 overflow-y-auto  crt-turn-on text-glow lowercase"
+      className="w-full flex-grow p-4 pt-12 overflow-y-auto text-glow lowercase crt-turn-on 
+            sm:p-6 sm:pt-16 
+            md:mt-0 md:py-10 md:pl-20 md:pr-20 
+            lg:pl-28 lg:pr-28"
       onClick={() => inputRef.current?.focus()} // Focus input on click anywhere in terminal
     >
     

@@ -34,8 +34,8 @@ const JsonStringValue: React.FC<{ children: React.ReactNode; isLast?: boolean }>
 const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
   return (
     <div className="font-mono text-sm leading-relaxed">
-      <SyntaxChar>{'{'}</SyntaxChar>
-      <div className="pl-4 flex flex-col gap-3">
+      <SyntaxChar >{'{'}</SyntaxChar>
+      <div className="pl-2 mt-7 ml-3 sm:pl-3 md:pl-4 flex flex-col gap-3">
         <div>
           <JsonKey>name</JsonKey>
           <SyntaxChar>: </SyntaxChar>
@@ -59,7 +59,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
           <div>
             <JsonKey>about_me</JsonKey>
             <SyntaxChar>: [</SyntaxChar>
-            <div className="pl-4">
+            <div className="pl-2 sm:pl-3 md:pl-4">
             { data.summary.map((line, index) => (
                 <div key={index}>
                   <JsonStringValue isLast={index === data.summary.length - 1}>{line}</JsonStringValue>
@@ -75,11 +75,11 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
         <div>
           <JsonKey>experience</JsonKey>
           <SyntaxChar>: [</SyntaxChar>
-          <div className="pl-4">
+          <div className="pl-2 sm:pl-3 md:pl-4">
             {data.experience.map((exp, expIndex) => (
               <div key={expIndex}>
                 <SyntaxChar>{'{'}</SyntaxChar>
-                <div className="pl-4">
+                <div className="pl-2 sm:pl-3 md:pl-4">
                   <div>
                     <JsonKey>company</JsonKey><SyntaxChar>: </SyntaxChar>
                     <JsonStringValue isLast={false}>{exp.value}</JsonStringValue>
@@ -98,7 +98,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
                   {exp.highlights && exp.highlights.length > 0 && (
                     <div>
                       <JsonKey>highlights</JsonKey><SyntaxChar>: [</SyntaxChar>
-                      <div className="pl-4">
+                      <div className="pl-2 sm:pl-3 md:pl-4">
                         {exp.highlights.map((highlight, hlIndex) => (
                           <div key={hlIndex}>
                             <JsonStringValue isLast={hlIndex === exp.highlights!.length - 1}>{highlight}</JsonStringValue>
@@ -120,7 +120,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
         
         <div>
           <JsonKey>socials</JsonKey><SyntaxChar>: [</SyntaxChar>
-          <div className="pl-4">
+          <div className="pl-2 sm:pl-3 md:pl-4">
             {data.social.map((social, index) => (
               <div key={social.url}>
                 <JsonStringValue isLast={index === data.social.length - 1}>
