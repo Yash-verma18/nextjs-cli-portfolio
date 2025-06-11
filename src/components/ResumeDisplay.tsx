@@ -1,3 +1,4 @@
+// src/components/ResumeDisplay.tsx
 import React from 'react';
 import TypingAnimation from './TypingAnimation';
 
@@ -10,46 +11,55 @@ interface ResumeDisplayProps {
   };
 }
 
-const JsonKey: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <span className="text-orange-400">{'"'}{children}{'"'}</span>
+// Helper for syntax characters like '{', '}', ':', ','
+const SyntaxChar: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  // Using a slightly dimmer glow for syntax characters, or you can use text-glow too
+  <span className="text-glow">{children}</span>
 );
 
-const JsonStringValue: React.FC<{ children: React.ReactNode, isLast?: boolean }> = ({ children, isLast }) => (
+const JsonKey: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="text-glow">{'"'}{children}{'"'}</span>
+);
+
+const JsonStringValue: React.FC<{ children: React.ReactNode; isLast?: boolean }> = ({ children, isLast }) => (
   <>
-    <span className="text-amber-400">{'"'}{children}{'"'}</span>
-    {!isLast && <span className="text-gray-500">,</span>}
+    <span className="text-glow">{'"'}{children}{'"'}</span>
+    {!isLast && <SyntaxChar>,</SyntaxChar>}
   </>
 );
 
 const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
-  const aboutMeLines = data.summary.includes('\n') ? data.summary.split('\n').map(line => line.trim()).filter(line => line) : [data.summary];
+  const aboutMeLines = data.summary.includes('\n')
+    ? data.summary.split('\n').map(line => line.trim()).filter(line => line)
+    : [data.summary];
 
   return (
     <div className="font-mono text-sm leading-relaxed">
-      <span className="text-gray-500">{'{'}</span>
-      <div className="pl-4">
+      <SyntaxChar>{'{'}</SyntaxChar>
+      <div className="pl-4 flex flex-col gap-3">
         <div>
-          <JsonKey>name</JsonKey> {/* Pass children without quotes now */}
-          <span className="text-gray-500">: </span>
+          <JsonKey>name</JsonKey>
+          <SyntaxChar>: </SyntaxChar>
           <JsonStringValue isLast={false}>{data.name}</JsonStringValue>
         </div>
         <div>
-          <JsonKey>who_am_i</JsonKey> {/* Pass children without quotes now */}
-          <span className="text-gray-500">: </span>
-          <span className="text-amber-400">{'"'}</span>
-          <TypingAnimation sequences={data.who_am_i} className="inline text-amber-400" />
-          <span className="text-amber-400">{'"'}</span>
-          <span className="text-gray-500">,</span>
+          <JsonKey>who_am_i</JsonKey>
+          <SyntaxChar>: </SyntaxChar>
+          <span className="text-glow">{'"'}</span>
+          {/* TypingAnimation needs to inherit or apply the glow too */}
+          <TypingAnimation sequences={data.who_am_i} className="inline text-glow" />
+          <span className="text-glow">{'"'}</span>
+          <SyntaxChar>,</SyntaxChar>
         </div>
         <div>
-          <JsonKey>location</JsonKey> {/* Pass children without quotes now */}
-          <span className="text-gray-500">: </span>
+          <JsonKey>location</JsonKey>
+          <SyntaxChar>: </SyntaxChar>
           <JsonStringValue isLast={aboutMeLines.length === 0}>{data.location}</JsonStringValue>
         </div>
         {aboutMeLines.length > 0 && (
           <div>
-            <JsonKey>about_me</JsonKey> {/* Pass children without quotes now */}
-            <span className="text-gray-500">: [</span>
+            <JsonKey>about_me</JsonKey>
+            <SyntaxChar>: [</SyntaxChar>
             <div className="pl-4">
               {aboutMeLines.map((line, index) => (
                 <div key={index}>
@@ -57,11 +67,11 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ data }) => {
                 </div>
               ))}
             </div>
-            <span className="text-gray-500">]</span>
+            <SyntaxChar>]</SyntaxChar>
           </div>
         )}
       </div>
-      <span className="text-gray-500">{'}'}</span>
+      <SyntaxChar>{'}'}</SyntaxChar>
     </div>
   );
 };
