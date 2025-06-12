@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { data as portfolioData } from '@/portfolioData'; // Using alias from your previous change
 import ResumeDisplay from './ResumeDisplay';
+import ProjectsDisplay from './ProjectsDisplay';
 interface HistoryItem {
   id: number;
   type: 'input' | 'output' | 'system' | 'error';
@@ -151,6 +152,11 @@ const Terminal: React.FC = () => {
             />
             ),
             });
+            break;
+        case 'projects':
+        addHistoryItem({
+            type: 'output',
+            content: ( <ProjectsDisplay />)});
             break;
         case 'sudo':
         if (args[0]?.toLowerCase() === 'hire-me') {

@@ -1,0 +1,145 @@
+/* Assuming a global style or a parent component sets the black background and base monospace font */
+
+.projects-grid {
+  display: grid;
+  /* Aim for 3 columns by setting a larger minmax width */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased min-width */
+  gap: 25px; /* Increased gap */
+  padding: 25px; /* Increased padding */
+  font-family: 'VT323', 'Courier New', monospace;
+  color: #FFB800;
+}
+
+.project-card {
+  /* Remove old border */
+  /* border: 1px dashed #FFB800; */ 
+  position: relative; /* Crucial for positioning border elements */
+  padding: 0; /* Padding will be on the content wrapper */
+  display: flex; /* To help with content wrapper, though content wrapper will handle flex direction */
+  flex-direction: column;
+  min-height: 220px; /* Increased height */
+  box-sizing: border-box;
+  background-color: #000; /* Ensure card background is black if not globally set */
+}
+
+.project-card-content {
+  padding: 20px; /* Padding for the actual content inside the borders */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Make content fill the card */
+  text-align: center;
+}
+
+/* Border Styling */
+.border-corner,
+.border-line {
+  position: absolute;
+  color: #FFB800;
+  font-family: 'VT323', 'Courier New', monospace; /* Ensure consistent font */
+  font-size: 1.2em; /* Adjust size of '+' and lines */
+  line-height: 1;
+}
+
+.border-corner {
+  z-index: 2;
+}
+
+.border-top-left { top: -0.1em; left: -0.1em; } /* Slight offset for better visual */
+.border-top-right { top: -0.1em; right: -0.1em; }
+.border-bottom-left { bottom: -0.1em; left: -0.1em; }
+.border-bottom-right { bottom: -0.1em; right: -0.1em; }
+
+.border-line {
+  background-color: transparent; /* Ensure no background unless intended */
+  z-index: 1;
+  overflow: hidden; /* Helps if using text dashes */
+}
+
+/* Using pseudo-elements for dashed lines for better control */
+.border-line::before {
+  content: '----------------------------------------------------'; /* Will be set per orientation */
+  position: absolute;
+  color: #FFB800;
+  font-weight: bold; /* Make dashes thicker */
+  /* letter-spacing will be set per orientation */
+}
+
+.border-top::before,
+.border-bottom::before {
+  content: '-----------------------------------------------------------------------'; /* 52 hyphens, back to a longer string */
+  left: 1.5em; 
+  right: 1.5em;
+  width: calc(100% - 3em); 
+  text-align: left; /* Keep left align for stability */
+  letter-spacing: -1px; 
+  overflow: hidden; 
+}
+
+.border-left::before,
+.border-right::before {
+    content: '------------------------------'; /* 30 hyphens, increased for height */
+    top: 1.2em; 
+  bottom: 1.2em;
+  height: calc(100% - 2.4em); 
+  writing-mode: vertical-lr; 
+  text-align: center; 
+  letter-spacing: 0px; /* Changed from -2px, adjust for vertical density */
+  overflow: hidden; 
+}
+
+.border-top { top: 0; left: 0; width: 100%; height: 1em; }
+.border-bottom { bottom: 0; left: 0; width: 100%; height: 1em; }
+.border-left { left: 0; top: 0; width: 1em; height: 100%; }
+.border-right { right: 0; top: 0; width: 1em; height: 100%; }
+
+.border-top::before { top: 0.1em; } /* Fine-tune vertical position of horizontal dashes */
+.border-bottom::before { bottom: 0.1em; } /* Fine-tune vertical position of horizontal dashes */
+
+/* Adjust alignment for vertical dashes if needed */
+.border-left::before { 
+  left: 0.2em; /* Fine-tune horizontal position of the vertical line itself */
+}
+.border-right::before { 
+  right: 0.2em; /* Fine-tune horizontal position of the vertical line itself */
+}
+
+.project-card-title {
+  font-size: 1.3em; /* Slightly larger title */
+  font-weight: bold;
+  margin-bottom: 15px; /* Increased margin */
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.project-card-title div,
+.project-card-description div {
+  line-height: 1.2;
+}
+
+.project-card-separator {
+  margin-top: auto;
+  margin-bottom: 15px; /* Increased margin */
+  line-height: 1.2;
+  text-align: center;
+  color: #FFB800;
+  /* text-transform: uppercase; */ /* Not needed for dashes */
+  font-weight: bold; /* Make separator dashes thicker */
+  letter-spacing: -0.5px; /* Make internal separator dashes denser */
+}
+
+.project-card-description {
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* For the '+' corners effect, a simple dashed border is used above.
+   Achieving the exact '+' corners from the image is more complex and might require:
+   - Pseudo-elements for each corner and line segment.
+   - SVG backgrounds.
+   - Or carefully positioned small elements.
+   We can refine this later if needed.
+*/

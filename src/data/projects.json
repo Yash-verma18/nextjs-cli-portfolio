@@ -1,0 +1,33 @@
+[
+    {
+      "id": "crypto-soundbox",
+      "titleLines": ["CRYPTO", "SOUNDBOX"],
+      "descriptionLines": ["QR Txns", "+ React", "ETHGlobal", "Hack"]
+    },
+    {
+      "id": "nft-marketplace",
+      "titleLines": ["NFT", "MARKETPLAC"],
+      "descriptionLines": ["ERC-721", "+ Royalties", "Gamified UI"]
+    },
+    {
+      "id": "cli-portfolio",
+      "titleLines": ["CLI", "PORTFOLIO"],
+      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+    },
+    {
+      "id": "cli-portfolio",
+      "titleLines": ["CLI", "PORTFOLIO"],
+      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+    },
+    {
+      "id": "cli-portfolio",
+      "titleLines": ["CLI", "PORTFOLIO"],
+      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+    },  
+    {
+        "id": "cli-portfolio",
+        "titleLines": ["CLI", "PORTFOLIO"],
+        "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+    }
+ 
+  ]
