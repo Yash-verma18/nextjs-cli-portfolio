@@ -1,33 +1,58 @@
 [
     {
+      "id": "workledger",
+      "titleLines": ["WORK", "LEDGER"],
+      "descriptionLines": ["Onchain Reviews", "ETH Tips", "Foundry + Next"]
+    },
+    {
+      "id": "wallet-comic",
+      "titleLines": ["WALLET", "COMIC"],
+      "descriptionLines": ["ETH + NFT Events", "Comic UI", "Framer Motion"]
+    },
+    {
+      "id": "30daysofsolidity",
+      "titleLines": ["30 DAYS", "SOLIDITY"],
+      "descriptionLines": ["ERCs", "DAOs + DeFi", "Built 30 Contracts"]
+    },
+    {
+      "id": "liquidity-dashboard",
+      "titleLines": ["UNISWAP", "DASHBOARD"],
+      "descriptionLines": ["The Graph", "Pool Stats", "Next.js + Tailwind"]
+    },
+    {
+      "id": "streamlinex",
+      "titleLines": ["STREAM", "LINEX"],
+      "descriptionLines": ["AI + Chat", "OpenAI + Socket", "Task Summarizer"]
+    },
+    {
+      "id": "token-exchange",
+      "titleLines": ["TOKEN", "EXCHANGE"],
+      "descriptionLines": ["ERC-20 Swap", "DEX UI", "Hardhat + Ethers"]
+    },
+    {
       "id": "crypto-soundbox",
       "titleLines": ["CRYPTO", "SOUNDBOX"],
-      "descriptionLines": ["QR Txns", "+ React", "ETHGlobal", "Hack"]
+      "descriptionLines": ["QR Payments", "ETHGlobal", "Filecoin + React"]
     },
     {
-      "id": "nft-marketplace",
-      "titleLines": ["NFT", "MARKETPLAC"],
-      "descriptionLines": ["ERC-721", "+ Royalties", "Gamified UI"]
+      "id": "unity-works",
+      "titleLines": ["UNITY", "WORKS"],
+      "descriptionLines": ["Artist Trust", "Tokenized Endorsement", "Onchain Rec"]
     },
     {
-      "id": "cli-portfolio",
-      "titleLines": ["CLI", "PORTFOLIO"],
-      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+      "id": "hobbinator",
+      "titleLines": ["HOBBY", "TRACKER"],
+      "descriptionLines": ["Gamified", "Goals + Badges", "Next + MongoDB"]
     },
     {
-      "id": "cli-portfolio",
-      "titleLines": ["CLI", "PORTFOLIO"],
-      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+      "id": "biodrop",
+      "titleLines": ["BIO", "DROP"],
+      "descriptionLines": ["Web3 Identity", "ENS Login", "Tailwind + Shadcn"]
     },
     {
-      "id": "cli-portfolio",
-      "titleLines": ["CLI", "PORTFOLIO"],
-      "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
-    },  
-    {
-        "id": "cli-portfolio",
-        "titleLines": ["CLI", "PORTFOLIO"],
-        "descriptionLines": ["React +", "TypeScript", "Terminal UI"]
+      "id": "portfolio-site",
+      "titleLines": ["PORTFOLIO", "SITE"],
+      "descriptionLines": ["Custom Domain", "Framer Motion", "Next.js UI"]
     }
- 
   ]
+  

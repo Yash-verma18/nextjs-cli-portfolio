@@ -6,7 +6,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased min-width */
   gap: 25px; /* Increased gap */
   padding: 25px; /* Increased padding */
-  font-family: 'VT323', 'Courier New', monospace;
+  /* font-family: 'VT323', 'Courier New', monospace; */
   color: #FFB800;
 }
 
