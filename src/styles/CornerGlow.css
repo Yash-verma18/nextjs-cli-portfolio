@@ -1,0 +1,46 @@
+/* CornerGlow.css */
+
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--scan-color, #FFB800);
+    box-shadow: 0 0 6px var(--scan-color, #FFB800);
+    z-index: 1; /* Keep below `+` corner spans */
+  }
+  
+  .top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+  
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+.corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--scan-color, #FFB800);
+  box-shadow: 0 0 6px var(--scan-color, #FFB800);
+  z-index: 1; /* Keep below `+` corner spans */
+}  
