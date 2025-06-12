@@ -10,7 +10,6 @@ interface HistoryItem {
   content: React.ReactNode;
 }
 
-console.log("portfolioData",portfolioData)
 
 const Terminal: React.FC = () => {
   const [history, setHistory] = useState<HistoryItem[]>([]);
@@ -75,6 +74,7 @@ const Terminal: React.FC = () => {
               <ul className="list-none pl-2">
                 <li><span className="text-glow-pink w-24 sm:w-28 inline-block">about</span>         - Display information about me.</li>
                 <li><span className="text-glow-pink w-24 sm:w-28 inline-block">experience</span>    - Show my work experience.</li>
+                <li><span className="text-glow-pink w-24 sm:w-28 inline-block">projects</span>      - Show my projects.</li>
                 {/* <li><span className="text-glow-pink w-24 sm:w-28 inline-block">skills</span>        - List my skills.</li> */}
                 <li><span className="text-glow-pink w-24 sm:w-28 inline-block">show-profile</span>  - Display my profile information.</li>
                 {/* <li><span className="text-glow-pink w-24 sm:w-28 inline-block">contact</span>       - Show contact information.</li> */}
@@ -135,38 +135,58 @@ const Terminal: React.FC = () => {
             addHistoryItem({ type: 'output', content: "No professional experience listed yet." });
         }
         break;
-        case 'show-profile':
-        addHistoryItem({
-            type: 'output',
-            content: (
-            <ResumeDisplay
-                data={{
-                name: portfolioData.name,
-                who_am_i: portfolioData.who_am_i,
-                location: portfolioData.location,
-                summary: portfolioData.summary,
-                experience: portfolioData.experience,
-                social: portfolioData.social,
-                }}
-               
-            />
-            ),
-            });
-            break;
-        case 'projects':
-        addHistoryItem({
-            type: 'output',
-            content: ( <ProjectsDisplay />)});
-            break;
-        case 'sudo':
-        if (args[0]?.toLowerCase() === 'hire-me') {
-          addHistoryItem({ type: 'output', content: `Initiating contact protocol for ${portfolioData.name}...` });
-          addHistoryItem({ type: 'output', content: `Please reach out to: ${portfolioData.email}` });
-          window.location.href = `mailto:${portfolioData.email}?subject=Job Opportunity - ${portfolioData.name}`;
-        } else {
-          addHistoryItem({ type: 'error', content: `sudo: ${args[0] || ''}: command not found. Try 'sudo hire-me'.` });
+      case 'show-profile':
+      addHistoryItem({
+          type: 'output',
+          content: (
+          <ResumeDisplay
+              data={{
+              name: portfolioData.name,
+              who_am_i: portfolioData.who_am_i,
+              location: portfolioData.location,
+              summary: portfolioData.summary,
+              experience: portfolioData.experience,
+              social: portfolioData.social,
+              }}
+              
+          />
+          ),
+          });
+          break;
+      case 'projects':
+      addHistoryItem({
+          type: 'output',
+          content: ( <ProjectsDisplay />)});
+          break;
+      case 'sudo':
+      if (args[0]?.toLowerCase() === 'hire-me') {
+        addHistoryItem({ type: 'output', content: `Initiating contact protocol for ${portfolioData.name}...` });
+        addHistoryItem({ type: 'output', content: `Please reach out to: ${portfolioData.email}` });
+        window.location.href = `mailto:${portfolioData.email}?subject=Job Opportunity - ${portfolioData.name}`;
+      } else {
+        addHistoryItem({ type: 'error', content: `sudo: ${args[0] || ''}: command not found. Try 'sudo hire-me'.` });
+      }
+      break;
+      case 'ls':
+        
+        if(args[0]?.toLowerCase() === 'projects'){
+          addHistoryItem({ type: 'output', content: ( <ProjectsDisplay />)});
         }
-        break;
+
+        // else if(args[0]?.toLowerCase() === 'experience'){
+        //   addHistoryItem({ type: 'output', content: ( <ExperienceDisplay />)});
+        // }
+
+        // else if(args[0]?.toLowerCase() === 'blogs'){
+        //   addHistoryItem({ type: 'output', content: ( <BlogsDisplay />)});
+        // }
+
+        else{
+          addHistoryItem({ type: 'output', content: 
+            `"projects" | "experience" | "blogs" `});
+          break;
+        } 
+        
       default:
         if (commandStr.trim() !== '') {
           addHistoryItem({ type: 'error', content: `${command}: command not found. Type 'help' for available commands.` });
