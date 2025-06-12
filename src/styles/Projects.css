@@ -50,11 +50,7 @@
 .border-bottom-left { bottom: -0.1em; left: -0.1em; }
 .border-bottom-right { bottom: -0.1em; right: -0.1em; }
 
-.border-line {
-  background-color: transparent; /* Ensure no background unless intended */
-  z-index: 1;
-  overflow: hidden; /* Helps if using text dashes */
-}
+
 
 /* Using pseudo-elements for dashed lines for better control */
 .border-line::before {
@@ -67,25 +63,34 @@
 
 .border-top::before,
 .border-bottom::before {
-  content: '-----------------------------------------------------------------------'; /* 52 hyphens, back to a longer string */
-  left: 1.5em; 
-  right: 1.5em;
-  width: calc(100% - 3em); 
-  text-align: left; /* Keep left align for stability */
-  letter-spacing: -1px; 
-  overflow: hidden; 
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #FFB800,
+    #FFB800 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  width: calc(100% - 2em); /* Leaves space for corners */
+  left: 1em; /* Offset from left */
 }
 
 .border-left::before,
 .border-right::before {
-    content: '------------------------------'; /* 30 hyphens, increased for height */
-    top: 1.2em; 
-  bottom: 1.2em;
-  height: calc(100% - 2.4em); 
-  writing-mode: vertical-lr; 
-  text-align: center; 
-  letter-spacing: 0px; /* Changed from -2px, adjust for vertical density */
-  overflow: hidden; 
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #FFB800,
+    #FFB800 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  height: calc(100% - 2em); /* Leave space for top/bottom corners */
+  top: 1em; /* Offset from top */
 }
 
 .border-top { top: 0; left: 0; width: 100%; height: 1em; }
@@ -93,15 +98,19 @@
 .border-left { left: 0; top: 0; width: 1em; height: 100%; }
 .border-right { right: 0; top: 0; width: 1em; height: 100%; }
 
-.border-top::before { top: 0.1em; } /* Fine-tune vertical position of horizontal dashes */
-.border-bottom::before { bottom: 0.1em; } /* Fine-tune vertical position of horizontal dashes */
-
-/* Adjust alignment for vertical dashes if needed */
-.border-left::before { 
-  left: 0.2em; /* Fine-tune horizontal position of the vertical line itself */
+.border-top::before {
+  top: 0.4em;
 }
-.border-right::before { 
-  right: 0.2em; /* Fine-tune horizontal position of the vertical line itself */
+
+.border-bottom::before {
+  bottom: 0.3em;
+}
+.border-left::before {
+  left: 0.4em;
+}
+
+.border-right::before {
+  right: 0.3em;
 }
 
 .project-card-title {
@@ -136,10 +145,3 @@
   line-height: 1.1;
 }
 
-/* For the '+' corners effect, a simple dashed border is used above.
-   Achieving the exact '+' corners from the image is more complex and might require:
-   - Pseudo-elements for each corner and line segment.
-   - SVG backgrounds.
-   - Or carefully positioned small elements.
-   We can refine this later if needed.
-*/
