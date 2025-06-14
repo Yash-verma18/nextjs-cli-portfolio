@@ -25,6 +25,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ sequences, className 
       repeat={Infinity}
       cursor={true}
     />
+    
   );
 };
 

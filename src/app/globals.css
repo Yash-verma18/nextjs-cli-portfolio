@@ -77,9 +77,6 @@ body {
   margin-left: 2px; /* Small space after prompt */
 }
 
-.hide-native-cursor {
-  caret-color: transparent;
-}
 
 .text-input-mock {
   white-space: pre;
