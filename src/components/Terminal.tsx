@@ -21,6 +21,22 @@ const Terminal: React.FC = () => {
   const hostName = 'yash-verma.me';
   const PROMPT = `[dev@${hostName} ~]$ `;
 
+  const availableCommands = [
+    'help',
+    'about',
+    'experience',
+    'projects',
+    'show-profile',
+    'sudo hire-me', // Keep as full for now, can be improved later
+    'echo',
+    'date',
+    'whoami',
+    'clear',
+    'banner',
+    'ls projects' // Keep as full for now
+    // Add other commands as needed
+  ];
+
   const addHistoryItem = useCallback((item: Omit<HistoryItem, 'id'>) => {
     setHistory(prev => [...prev, { ...item, id: Date.now() + prev.length }]);
   }, []);
@@ -58,7 +74,31 @@ const Terminal: React.FC = () => {
     inputRef.current?.focus();
   }, [history]);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Tab') {
+      e.preventDefault(); // Prevent default Tab behavior (focus change)
+      const currentInput = input.trimStart();
+      if (currentInput === '') return;
 
+      // Simple autocompletion for the first word (command)
+      // More complex logic can be added for arguments later
+      const parts = currentInput.split(' ');
+      const commandPart = parts[0].toLowerCase();
+      const argsPart = parts.slice(1).join(' ');
+
+      const matchingCommands = availableCommands.filter(cmd => 
+        cmd.toLowerCase().startsWith(commandPart)
+      );
+
+      if (matchingCommands.length === 1) {
+        setInput(matchingCommands[0] + (matchingCommands[0].includes(' ') ? '' : ' ') + argsPart);
+      } else if (matchingCommands.length > 1) {
+        // If multiple commands match, complete to the first one.
+        // Could also cycle through them or list them.
+        setInput(matchingCommands[0] + (matchingCommands[0].includes(' ') ? '' : ' ') + argsPart);
+      }
+    }
+  };
 
   const processCommand = useCallback((commandStr: string): void => {
     const [command, ...args] = commandStr.trim().split(' ');
@@ -249,6 +289,7 @@ const Terminal: React.FC = () => {
             onChange={(e) => setInput(e.target.value)}
             className="absolute left-[-9999px]" // hide input off-screen
             autoFocus
+            onKeyDown={handleKeyDown} // Add keydown handler here
           />
       </div>
       </form>
