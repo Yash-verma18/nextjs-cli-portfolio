@@ -3,14 +3,22 @@
 import React, { useState } from 'react';
 import Terminal from '../Terminal';
 import CRTFrame from '../CRTIntro/CRTFrame';
+import UpdatePrompt from '../UpdatePrompt';
+
 
 const AppWrapper = () => {
   const [showIntro, setShowIntro] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [showUpdatePromptModal, setShowUpdatePromptModal] = useState(true);
 
-  const handleStart = () => {
+  const handleRestartFromPrompt = () => {
     setHasStarted(true);
     setShowIntro(true);
+    setShowUpdatePromptModal(false);
+  };
+
+  const handleLaterFromPrompt = () => {
+    setShowUpdatePromptModal(false);
   };
 
   const handleIntroComplete = () => {
@@ -19,16 +27,14 @@ const AppWrapper = () => {
 
   return (
     <>
-      {/* START BUTTON */}
-      {!showIntro && !hasStarted && (
-        <div className="flex items-center justify-center h-screen bg-black">
-          <button className="text-glow" onClick={handleStart}>
-            START
-          </button>
-        </div>
+      {/* UPDATE PROMPT INSTEAD OF START BUTTON */}
+      {showUpdatePromptModal && !hasStarted && (
+        <UpdatePrompt
+          onRestart={handleRestartFromPrompt}
+          onLater={handleLaterFromPrompt}
+        />
       )}
 
-     
       {/* CRT FRAME ANIMATION */}
       {showIntro && hasStarted && (
         <CRTFrame
