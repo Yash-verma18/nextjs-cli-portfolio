@@ -17,9 +17,13 @@ const CRTLoadingBar: React.FC<CRTLoadingBarProps> = ({ onComplete }) => {
           if (onComplete) onComplete();
           return 100;
         }
+
+        if(prev == 85){
+          return prev = 100;
+        }
         return prev + 1;
       });
-    }, 80); // Slower = smoother
+    }, 140); // Slower = smoother
 
     return () => clearInterval(interval);
   }, [onComplete]);
