@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css'; // Ensure globals.css is imported
 
 import { IBM_Plex_Mono } from "next/font/google"; // Correctly importing IBM Plex Mono
+import KeyboardSoundProvider from '@/components/KeyboardSoundProvider';
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -23,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${ibmPlexMono.variable}`}> {/* This applies the CSS variable class to the html tag */}
-      <body className="font-mono">{children}</body>
+      <body className="font-mono">
+        <KeyboardSoundProvider>
+          {children}
+        </KeyboardSoundProvider>
+      </body>
     </html>
   )
 }

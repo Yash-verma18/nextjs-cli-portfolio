@@ -17,7 +17,9 @@ const AppWrapper = () => {
     setShowUpdatePromptModal(false);
   };
 
-  const handleLaterFromPrompt = () => {
+  const handleSkipFromPrompt = () => {
+    setShowIntro(false);
+    setHasStarted(true);
     setShowUpdatePromptModal(false);
   };
 
@@ -31,7 +33,7 @@ const AppWrapper = () => {
       {showUpdatePromptModal && !hasStarted && (
         <UpdatePrompt
           onRestart={handleRestartFromPrompt}
-          onLater={handleLaterFromPrompt}
+          onSkip={  handleSkipFromPrompt}
         />
       )}
 

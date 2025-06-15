@@ -2,7 +2,7 @@ import React from 'react';
 import { Pixelify_Sans } from 'next/font/google';
 interface UpdatePromptProps {
   onRestart: () => void;
-  onLater: () => void;
+  onSkip: () => void;
 }
 
 const pixelifySans = Pixelify_Sans({
@@ -11,7 +11,7 @@ const pixelifySans = Pixelify_Sans({
     display: 'swap',
   });
 
-const UpdatePrompt: React.FC<UpdatePromptProps> = ({ onRestart, onLater }) => {
+const UpdatePrompt: React.FC<UpdatePromptProps> = ({ onRestart, onSkip }) => {
   // Define colors based on the new design (beige background, black text/elements)
   const modalBgColor = "bg-[#dfe4c2]"; // Beige background from JSON/Image
   const modalTextColor = "text-black";
@@ -33,7 +33,7 @@ const UpdatePrompt: React.FC<UpdatePromptProps> = ({ onRestart, onLater }) => {
         <div className={`flex justify-between items-center p-1.5 border-b-2 ${borderColor}`}>
           <span className={`text-sm pl-1 ${modalTextColor}`}>Update</span>
           <button
-            onClick={onLater}
+            onClick={onSkip}
             aria-label="Close"
             className={`w-6 h-5 border ${borderColor} flex items-center justify-center 
                         ${modalTextColor} ${closeButtonHoverBgColor}
@@ -68,12 +68,12 @@ const UpdatePrompt: React.FC<UpdatePromptProps> = ({ onRestart, onLater }) => {
             Launch
           </button>
           <button
-            onClick={onLater}
+            onClick={onSkip}
             className={`${modalTextColor} border ${borderColor} px-5 py-1.5 text-sm 
                         ${buttonHoverBgColor} ${buttonHoverTextColor}
                         focus:outline-none focus:ring-1 focus:ring-black`}
           >
-            Later
+            Skip
           </button>
         </div>
       </div>
