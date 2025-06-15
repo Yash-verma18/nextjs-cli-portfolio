@@ -32,7 +32,7 @@ const CRTLoadingBar: React.FC<CRTLoadingBarProps> = ({ onComplete }) => {
     <div className="crt-loading-container">
       <div className="crt-loading-label">processing...</div>
 
-      <div className="crt-progress-bar">
+      <div className="crt-progress-bar p-2">
         <div
           className="crt-progress-fill"
           style={{ width: `${progress}%` }}
